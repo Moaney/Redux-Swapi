@@ -7,6 +7,8 @@ import { applyMiddleware, createStore } from "redux";
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import rootReducer from "./reducers";
+
+import { storePhoto } from './token';
 // needed dependancies
 // applyMiddleware from redux
 // thunk from redux-thunk
@@ -14,7 +16,7 @@ import rootReducer from "./reducers";
 // rootReducer from ./reducers
 
 const store = createStore(
-  rootReducer, applyMiddleware(thunk, logger)
+  rootReducer, applyMiddleware(storePhoto, thunk, logger)
   /* applyMiddleware goes here */
 );
 
